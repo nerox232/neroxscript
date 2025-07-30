@@ -108,3 +108,25 @@ while true do
 		hrp.Anchored = false
 	end
 end
+
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local RunService = game:GetService("RunService")
+
+task.spawn(function()
+	while true do
+		-- Klavye girdisi gönderimi (aktiflik gösterir)
+		VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Right, false, nil)
+		task.wait(0.1)
+		VirtualInputManager:SendKeyEvent(false, Enum.KeyCode.Right, false, nil)
+
+		-- Fare hareketi simülasyonu (odak dışındayken bile)
+		VirtualInputManager:SendMouseMove(0, 0)
+
+		task.wait(15)
+	end
+end)
+
+RunService.Stepped:Connect(function()
+	-- Her framede küçük bir fare hareketi tetikle
+	VirtualInputManager:SendMouseMove(math.random(0,1), math.random(0,1))
+end)
