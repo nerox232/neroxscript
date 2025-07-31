@@ -87,7 +87,7 @@ local function flyToPosition(targetPos)
 
 	local flyTargetPos = Vector3.new(targetPos.X, targetPos.Y + 3, targetPos.Z)
 	local distance = (flyUpPos - flyTargetPos).Magnitude
-	local flySpeed = 100
+	local flySpeed = 75
 
 	local timeToTarget = distance / flySpeed
 	local tweenTarget = TweenService:Create(hrp, TweenInfo.new(timeToTarget, Enum.EasingStyle.Linear), {CFrame = CFrame.new(flyTargetPos)})
