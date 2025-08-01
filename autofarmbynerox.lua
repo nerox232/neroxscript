@@ -1,6 +1,8 @@
+game:GetService("HttpService").HttpEnabled == true
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
+
 
 local webhookURL = "https://discord.com/api/webhooks/1400746786015940669/IZNNBYX1zS4koimIMMMPj-FsB5ALre5S_An1c3X0FOu9KqbZPc6f67b2duHb9OwGWUfY"
 
