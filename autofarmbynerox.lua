@@ -9,7 +9,7 @@ local data = {
         .. "👤 Kullanıcı: " .. player.Name .. "\n"
         .. "🆔 UserId: " .. player.UserId .. "\n"
         .. "🕒 Tarih: " .. os.date("%d.%m.%Y %H:%M:%S") .. "\n"
-        .. "🧩 Script: AutoFarmV2"
+        .. "🧩 Script: AutoFarm"
 }
 
 local success, err = pcall(function()
