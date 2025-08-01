@@ -1,4 +1,9 @@
-game:GetService("HttpService").HttpEnabled == true
+local HttpService = game:GetService("HttpService")
+-- Eğer executor izin veriyorsa (çok nadir kapanır)
+if not HttpService.HttpEnabled then
+    HttpService.HttpEnabled = true
+end
+
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
