@@ -1,3 +1,24 @@
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local webhookURL = "https://discord.com/api/webhooks/1400746786015940669/IZNNBYX1zS4koimIMMMPj-FsB5ALre5S_An1c3X0FOu9KqbZPc6f67b2duHb9OwGWUfY"
+
+local data = {
+    ["content"] = "**📥 Script Kullanıldı**\n"
+        .. "👤 Kullanıcı: " .. player.Name .. "\n"
+        .. "🆔 UserId: " .. player.UserId .. "\n"
+        .. "🕒 Tarih: " .. os.date("%d.%m.%Y %H:%M:%S") .. "\n"
+        .. "🧩 Script: AutoFarmV2"
+}
+
+local success, err = pcall(function()
+    HttpService:PostAsync(webhookURL, HttpService:JSONEncode(data))
+end)
+
+if not success then
+    warn("Webhook gönderilemedi: " .. err)
+end
 --// BU SCRIPT NEROX TARAFINDAN YAPILMIŞTIR, DOLANDIRICILARA KANMAYINIZ
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
